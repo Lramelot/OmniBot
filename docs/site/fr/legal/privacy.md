@@ -25,6 +25,12 @@ OmniBot collecte uniquement les données nécessaires à son fonctionnement :
 - Valeurs de configuration des modules (chaînes, nombres, toggles booléens, sélections d'énumérations) telles que définies par le schéma de chaque module
 - La configuration est stockée au format JSON dans la base de données
 
+### Anniversaires
+
+- Le jour et le mois de naissance (jamais l'année) que les membres choisissent d'enregistrer avec le module Anniversaires, ou qu'un administrateur enregistre pour eux
+- Le rôle d'anniversaire attribué pour la journée, afin que le bot puisse le retirer
+- Un anniversaire est supprimé quand son membre le retire (`/birthday remove`), quand un administrateur le retire, ou quand le bot constate que le membre a quitté le serveur
+
 ### État d'activation des modules
 
 - Quels modules sont activés ou désactivés sur chaque serveur

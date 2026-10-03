@@ -25,6 +25,12 @@ OmniBot collects only the data necessary for its operation:
 - Module configuration values (strings, numbers, boolean toggles, enum selections) as defined by each module's schema
 - Configuration is stored as JSON in the database
 
+### Birthdays
+
+- The day and month of birth (never the year) that members choose to save with the Birthdays module, or that an administrator saves for them
+- Whether the bot gave the birthday role for the day, so it can take it back
+- A birthday is deleted when its member removes it (`/birthday remove`), when an administrator removes it, or when the bot notices the member has left the server
+
 ### Module Activation State
 
 - Which modules are enabled or disabled on each guild

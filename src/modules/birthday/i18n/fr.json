@@ -1,0 +1,39 @@
+{
+  "config.channel.name": "Salon des annonces",
+  "config.channel.description": "Salon dans lequel les anniversaires sont annoncés.",
+
+  "config.role.name": "Rôle d'anniversaire",
+  "config.role.description": "Rôle attribué aux membres pendant toute la journée de leur anniversaire.",
+
+  "config.message.name": "Message",
+  "config.message.description": "Message d'annonce — variable : {user} (les mentions de tous les membres fêtés ce jour-là).",
+  "config.message.default": "🎉 Joyeux anniversaire {user} !",
+
+  "config.hour.name": "Heure d'annonce",
+  "config.hour.description": "Heure de la journée à laquelle les anniversaires sont annoncés.",
+
+  "config.timezone.name": "Fuseau horaire",
+  "config.timezone.description": "Fuseau horaire IANA qui détermine quand commence une journée, par exemple Europe/Paris.",
+
+  "invalidDate": "Cette date n'existe pas.",
+  "invalidTimeZone": "⚠️ Le fuseau horaire configuré « {{timeZone}} » est invalide : UTC est utilisé à la place. Corrigez-le avec /config birthday.",
+
+  "set.done": "Votre anniversaire est enregistré : **{{date}}**.",
+  "remove.done": "Votre anniversaire a été oublié.",
+  "remove.none": "Vous n'aviez pas enregistré d'anniversaire.",
+
+  "show.value": "L'anniversaire de {{user}} est le **{{date}}**.",
+  "show.none": "{{user}} n'a pas enregistré d'anniversaire.",
+
+  "upcoming.title": "🎂 Prochains anniversaires",
+  "upcoming.empty": "Aucun anniversaire n'a encore été enregistré.",
+  "upcoming.line": "**{{date}}** — {{user}} ({{when}})",
+  "upcoming.today": "aujourd'hui",
+  "upcoming.in_one": "dans {{count}} jour",
+  "upcoming.in_other": "dans {{count}} jours",
+
+  "admin.noPermission": "Vous devez être administrateur pour utiliser cette commande.",
+  "admin.set.done": "Anniversaire de {{user}} fixé au **{{date}}**.",
+  "admin.remove.done": "Anniversaire de {{user}} supprimé.",
+  "admin.remove.none": "{{user}} n'a pas d'anniversaire à supprimer."
+}

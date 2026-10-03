@@ -16,6 +16,18 @@ model ModuleActivation {
   @@id([moduleId, guildId])
 }
 
+// === Modèles de modules/birthday/birthday.prisma ===
+model Birthday {
+  guildId            String
+  userId             String
+  day                Int
+  month              Int
+  lastCelebratedYear Int?
+  grantedRoleId      String?
+
+  @@id([guildId, userId])
+}
+
 // === Modèles de modules/four-hour-game/four-hour-game.prisma ===
 model FourHourGameScore {
   guildId String

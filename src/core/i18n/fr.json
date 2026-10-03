@@ -83,6 +83,9 @@
   "modules.four-hour-game.name": "Jeu des 4h",
   "modules.four-hour-game.description": "Marquez un point quand votre message reste le dernier du salon de jeu pendant le délai configuré.",
 
+  "modules.birthday.name": "Anniversaires",
+  "modules.birthday.description": "Les membres enregistrent leur anniversaire ; le bot le leur souhaite et peut leur attribuer un rôle pour la journée.",
+
   "modules.test-config.name": "Test Config",
   "modules.test-config.description": "Module de développement déclarant tous les types de configuration, pour tester l'UI de configuration.",
 

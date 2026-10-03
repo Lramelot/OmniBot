@@ -64,6 +64,53 @@ Fixe le score d'un membre, ou le supprime. Fixer un score à 0 revient à le sup
 
 ---
 
+## Module Anniversaires
+
+Les membres enregistrent leur date d'anniversaire (jour et mois, sans année) ; le jour venu, le bot le leur souhaite dans le salon configuré et peut leur attribuer un rôle pour la journée.
+
+### Comportement automatique
+
+Le bot vérifie les anniversaires à chaque quart d'heure (:00, :15, :30, :45), dans le fuseau horaire du serveur — tous les fuseaux étant décalés d'un multiple de 15 minutes, chaque heure d'annonce et chaque minuit local tombent sur une vérification. Il vérifie aussi le serveur dès qu'un anniversaire est enregistré. Dès que l'heure d'annonce est atteinte le jour de l'anniversaire, il :
+
+1. attribue le rôle d'anniversaire à chaque membre fêté, si un rôle est configuré ;
+2. publie **un seul** message d'annonce dans le salon configuré, qui mentionne tous les membres fêtés à ce moment-là (« @Alice et @Bob »).
+
+Un membre n'est fêté qu'une fois par an, même si le bot redémarre ou si sa date est modifiée. Un anniversaire enregistré le jour même, après l'heure d'annonce, est fêté aussitôt. Si le bot était arrêté pendant toute la journée, l'anniversaire n'est pas rattrapé. Les membres nés un 29 février sont fêtés le 28 février les années non bissextiles.
+
+Un membre qui a quitté le serveur n'est pas fêté : son anniversaire est supprimé dès que le bot constate son départ (au moment de le fêter, de lui retirer le rôle ou en affichant `/birthday upcoming`).
+
+Le rôle est retiré dès que la journée est terminée, quand le membre supprime son anniversaire, et à la désactivation du module. Le bot retire le rôle qu'il a réellement attribué : si le rôle configuré change dans la journée, l'ancien est retiré et le nouveau attribué ; si le champ est vidé, le rôle est simplement retiré. Le bot a besoin de la permission _Gérer les rôles_ et que son rôle soit placé au-dessus du rôle d'anniversaire.
+
+### `/birthday set <day> <month>` et `/birthday remove`
+
+Enregistre ou oublie son propre anniversaire. Une date inexistante (31 avril…) est refusée. Réponses éphémères.
+
+### `/birthday show [member]`
+
+Affiche l'anniversaire du membre indiqué, ou le sien par défaut.
+
+### `/birthday upcoming`
+
+Liste les 10 prochains anniversaires du serveur, avec le nombre de jours restants. Si le fuseau horaire configuré est invalide, un avertissement s'affiche en pied de liste.
+
+### `/birthday-admin set <member> <day> <month>` et `/birthday-admin remove <member>`
+
+**Permission requise :** Administrateur
+
+Fixe ou supprime l'anniversaire d'un membre. Réponses éphémères ; celle de `set` signale un fuseau horaire invalide.
+
+### Configuration — `/config birthday`
+
+| Champ      | Type  | Description                                                                                                   |
+| ---------- | ----- | ------------------------------------------------------------------------------------------------------------- |
+| `channel`  | Salon | Salon des annonces. S'il n'est pas défini, aucun message n'est publié (le rôle reste attribué).               |
+| `role`     | Rôle  | Rôle attribué pendant la journée d'anniversaire. Facultatif.                                                  |
+| `message`  | Texte | Message d'annonce ; `{user}` est remplacé par les mentions des membres fêtés. Défaut traduit selon la langue. |
+| `hour`     | Choix | Heure d'annonce, de `00:00` à `23:00`. Défaut : `09:00`.                                                      |
+| `timezone` | Texte | Fuseau horaire IANA (`Europe/Paris`, `America/Montreal`…). Défaut : `Europe/Paris`, UTC si invalide.          |
+
+---
+
 ## Module Thread Creator
 
 Crée automatiquement un fil de discussion sous chaque nouveau message dans un salon configuré. Remplace le bot Needle.

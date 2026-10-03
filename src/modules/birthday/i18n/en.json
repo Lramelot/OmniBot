@@ -1,0 +1,39 @@
+{
+  "config.channel.name": "Announcement channel",
+  "config.channel.description": "Channel where birthdays are announced.",
+
+  "config.role.name": "Birthday role",
+  "config.role.description": "Role given to members for the whole day of their birthday.",
+
+  "config.message.name": "Message",
+  "config.message.description": "Announcement message — variable: {user} (the mentions of every member celebrated that day).",
+  "config.message.default": "🎉 Happy birthday {user}!",
+
+  "config.hour.name": "Announcement time",
+  "config.hour.description": "Time of day at which birthdays are announced.",
+
+  "config.timezone.name": "Time zone",
+  "config.timezone.description": "IANA time zone used to decide when a day starts, e.g. Europe/Paris.",
+
+  "invalidDate": "This date does not exist.",
+  "invalidTimeZone": "⚠️ The configured time zone \"{{timeZone}}\" is not valid: UTC is used instead. Fix it with /config birthday.",
+
+  "set.done": "Your birthday is saved: **{{date}}**.",
+  "remove.done": "Your birthday has been forgotten.",
+  "remove.none": "You had not saved a birthday.",
+
+  "show.value": "{{user}}'s birthday is on **{{date}}**.",
+  "show.none": "{{user}} has not saved a birthday.",
+
+  "upcoming.title": "🎂 Upcoming birthdays",
+  "upcoming.empty": "No birthday has been saved yet.",
+  "upcoming.line": "**{{date}}** — {{user}} ({{when}})",
+  "upcoming.today": "today",
+  "upcoming.in_one": "in {{count}} day",
+  "upcoming.in_other": "in {{count}} days",
+
+  "admin.noPermission": "You must be an administrator to use this command.",
+  "admin.set.done": "{{user}}'s birthday set to **{{date}}**.",
+  "admin.remove.done": "{{user}}'s birthday removed.",
+  "admin.remove.none": "{{user}} has no birthday to remove."
+}

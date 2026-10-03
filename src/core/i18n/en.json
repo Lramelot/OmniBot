@@ -83,6 +83,9 @@
   "modules.four-hour-game.name": "4h Game",
   "modules.four-hour-game.description": "Score a point when your message stays the last one in the game channel for the configured delay.",
 
+  "modules.birthday.name": "Birthdays",
+  "modules.birthday.description": "Members save their birthday; the bot wishes them a happy birthday and can give them a role for the day.",
+
   "modules.test-config.name": "Test Config",
   "modules.test-config.description": "Development module declaring all configuration types, used to test the configuration UI.",
 

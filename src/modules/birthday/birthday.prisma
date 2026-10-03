@@ -1,0 +1,10 @@
+model Birthday {
+  guildId            String
+  userId             String
+  day                Int
+  month              Int
+  lastCelebratedYear Int?
+  grantedRoleId      String?
+
+  @@id([guildId, userId])
+}
